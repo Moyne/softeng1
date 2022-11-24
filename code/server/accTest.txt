@@ -1,0 +1,3795 @@
+Server listening at http://localhost:3001
+
+
+  Test CR1 Item
+    Removing all Items
+[
+  {
+    id: 1,
+    description: 'desc0',
+    price: 9.99,
+    SKUId: 71,
+    supplierId: 1
+  },
+  {
+    id: 2,
+    description: 'desc1',
+    price: 199.99,
+    SKUId: 72,
+    supplierId: 1
+  }
+]
+Deleted 1 by supplier 1
+Deleted 2 by supplier 1
+      ✔ get /api/items/ (57ms)
+    Get all items
+[]
+      ✔ get /api/items/
+    removing all skuitems
+[
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 71,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 71,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  }
+]
+Deleted 12345678901234567890123456789015
+Deleted 12345678901234567890123456789016
+done!
+      ✔ Getting SKUitems
+    get /api/skuitems
+undefined
+      ✔ Getting SKUitems
+    removing all skus
+[
+  {
+    id: 71,
+    description: 'a',
+    weight: 20,
+    volume: 30,
+    notes: 'b',
+    position: null,
+    availableQuantity: 40,
+    price: 10,
+    testDescriptors: []
+  },
+  {
+    id: 72,
+    description: 'c',
+    weight: 40,
+    volume: 30,
+    notes: 'd',
+    position: null,
+    availableQuantity: 20,
+    price: 10,
+    testDescriptors: []
+  }
+]
+Deleted 71
+Deleted 72
+done!
+      ✔ Getting SKUs
+    get /api/skus
+      ✔ FR 2.3 -> List all SKUs
+     Delete all not manager
+[
+  {
+    id: 1,
+    name: 'supName',
+    surname: 'supSur',
+    email: 'supp1@ezwh.com',
+    type: 'supplier'
+  },
+  {
+    id: 2,
+    name: 'supName2',
+    surname: 'supSur2',
+    email: 'supp2@ezwh.com',
+    type: 'supplier'
+  }
+]
+supp1@ezwh.com
+{}
+Deleted supp1@ezwh.com
+supp2@ezwh.com
+{}
+Deleted supp2@ezwh.com
+done!
+      ✔ Cleaning db user util
+     post /api/newUser
+      ✔ FR 1.1 a -> Define a new user (39ms)
+     post /api/newUser
+      ✔ FR 1.1 a -> Define a new user
+     get /api/suppliers
+      ✔  get all suppliers
+    post /api/sku/
+      ✔ FR 2.1 a -> Define a new SKU
+    post /api/sku/
+      ✔ FR 2.1 a -> Define a new SKU
+    get /api/skus
+      ✔ FR 2.3 -> List all SKUs
+    post /api/item/
+      ✔ Adding item details
+    post /api/item/
+      ✔ Adding item details
+    Get all items
+[
+  {
+    id: 0,
+    description: 'desc0',
+    price: 9.99,
+    SKUId: 73,
+    supplierId: 1
+  }
+]
+      ✔ get /api/items/
+    get /api/items/:id
+      ✔ Gettim item details
+    get /api/items/:id
+      ✔ Gettim item details
+     put /api/item/:id
+      ✔ Modify an item given its ID and new fields
+     put /api/item/:id
+{
+  id: 0,
+  description: 'newDesc',
+  price: 99.99,
+  SKUId: 73,
+  supplierId: 1
+}
+      ✔ Modify an item given its ID and new fields
+     delete /api/items/:id
+      ✔ Delete an item given its id
+    Removing all Items
+[]
+      ✔ get /api/items/
+    removing all skuitems
+[]
+done!
+      ✔ Getting SKUitems
+    removing all skus
+[
+  {
+    id: 73,
+    description: 'a',
+    weight: 20,
+    volume: 30,
+    notes: 'b',
+    position: null,
+    availableQuantity: 40,
+    price: 10,
+    testDescriptors: []
+  },
+  {
+    id: 74,
+    description: 'c',
+    weight: 40,
+    volume: 30,
+    notes: 'd',
+    position: null,
+    availableQuantity: 20,
+    price: 10,
+    testDescriptors: []
+  }
+]
+Deleted 73
+Deleted 74
+done!
+      ✔ Getting SKUs
+
+  Test CR1 RestockOrder
+    Removing all Restock orders
+[
+  {
+    id: 47,
+    issueDate: '2022/05/16 09:33',
+    state: 'DELIVERED',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: null,
+    skuItems: []
+  },
+  {
+    id: 48,
+    issueDate: '2022/05/17 19:00',
+    state: 'ISSUED',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: null,
+    skuItems: []
+  }
+]
+Deleted 47
+Deleted 48
+done!
+      ✔ Getting and removing
+     get /api/restockOrders
+      ✔  get all restock orders
+    removing all skuitems
+[]
+done!
+      ✔ Getting SKUitems
+    get /api/skuitems
+undefined
+      ✔ Getting SKUitems
+    removing all skus
+[]
+done!
+      ✔ Getting SKUs
+    get /api/skus
+      ✔ FR 2.3 -> List all SKUs
+     Delete all not manager
+[
+  {
+    id: 1,
+    name: 'supName',
+    surname: 'supSur',
+    email: 'supp1@ezwh.com',
+    type: 'supplier'
+  },
+  {
+    id: 2,
+    name: 'supName2',
+    surname: 'supSur2',
+    email: 'supp2@ezwh.com',
+    type: 'supplier'
+  }
+]
+supp1@ezwh.com
+{}
+Deleted supp1@ezwh.com
+supp2@ezwh.com
+{}
+Deleted supp2@ezwh.com
+done!
+      ✔ Cleaning db user util
+    post /api/sku/
+      ✔ FR 2.1 a -> Define a new SKU
+    post /api/sku/
+      ✔ FR 2.1 a -> Define a new SKU
+    get /api/skus
+      ✔ FR 2.3 -> List all SKUs
+     post /api/newUser
+      ✔ FR 1.1 a -> Define a new user (38ms)
+     post /api/newUser
+      ✔ FR 1.1 a -> Define a new user
+    post /api/skuitem/
+      ✔ Adding skuitem details
+    post /api/skuitem/
+      ✔ Adding skuitem details
+     get /api/suppliers
+      ✔  get all suppliers
+    Removing all Items
+[]
+      ✔ get /api/items/
+    post /api/item/
+      ✔ Adding item details
+    post /api/item/
+      ✔ Adding item details
+    post /api/restockOrder
+
+      ✔  Create a restock order
+    post /api/restockOrder
+
+      ✔  Create a restock order
+    post /api/restockOrder
+
+      ✔  Create a restock order
+     get /api/restockOrders
+      ✔  get all restock orders
+    put /api/restockOrder/:id
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id
+      ✔ Change a state of a restock order
+     get /api/restockOrders
+      ✔  get all restock orders
+    post /api/skuitem/
+      ✔ Adding skuitem details
+    post /api/skuitem/
+      ✔ Adding skuitem details
+    put /api/restockOrder/:id/skuItems
+[
+  { SKUId: 76, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 76, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+this is skuitems  [
+  { SKUId: 76, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 76, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+IN MODIFY SKU IT REST ORD WITH: 49  ,  {
+  skuItems: [
+    { SKUId: 76, itemId: 1, rfid: '12345678901234567890123456789017' },
+    { SKUId: 76, itemId: 1, rfid: '12345678901234567890123456789018' }
+  ]
+}
+SKUITS EXISTING: [
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 75,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 75,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  },
+  {
+    RFID: '12345678901234567890123456789017',
+    SKUId: 76,
+    Available: 0,
+    DateOfStock: '2022/11/29 20:45'
+  },
+  {
+    RFID: '12345678901234567890123456789018',
+    SKUId: 76,
+    Available: 0,
+    DateOfStock: '2022/12/29 20:45'
+  }
+]
+GOT RESTOCK ORDER, {
+  issueDate: '2022/05/16 09:33',
+  state: 'DELIVERED',
+  products: [
+    {
+      SKUId: 75,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      qty: 1
+    },
+    {
+      SKUId: 76,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      qty: 1
+    }
+  ],
+  supplierId: 1,
+  transportNote: null,
+  skuItems: []
+}
+TRYING TO GET SKUIT  12345678901234567890123456789017
+TRYING TO GET SKUIT  12345678901234567890123456789018
+SKU ITS ALREADY EXISTS CHECK PASSED
+<ref *2> Response {
+  _events: [Object: null prototype] {},
+  _eventsCount: 0,
+  _maxListeners: undefined,
+  res: <ref *1> IncomingMessage {
+    _readableState: ReadableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: [],
+      flowing: true,
+      ended: true,
+      endEmitted: true,
+      reading: false,
+      constructed: true,
+      sync: true,
+      needReadable: false,
+      emittedReadable: false,
+      readableListening: false,
+      resumeScheduled: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: true,
+      destroyed: true,
+      errored: null,
+      closed: true,
+      closeEmitted: true,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      multiAwaitDrain: false,
+      readingMore: true,
+      dataEmitted: false,
+      decoder: [StringDecoder],
+      encoding: 'utf8',
+      [Symbol(kPaused)]: false
+    },
+    _events: [Object: null prototype] {
+      end: [Array],
+      data: [Array],
+      error: [Array],
+      close: [Function: bound emit]
+    },
+    _eventsCount: 4,
+    _maxListeners: undefined,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 3098,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'X-Powered-By',
+      'Express',
+      'Content-Type',
+      'application/json; charset=utf-8',
+      'Date',
+      'Thu, 07 Jul 2022 15:15:53 GMT',
+      'Connection',
+      'close',
+      'Content-Length',
+      '0'
+    ],
+    rawTrailers: [],
+    aborted: false,
+    upgrade: false,
+    url: '',
+    method: null,
+    statusCode: 422,
+    statusMessage: 'Unprocessable Entity',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 3098,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _consuming: false,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/49/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61398\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/49/skuItems',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    text: '',
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'x-powered-by': 'Express',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Thu, 07 Jul 2022 15:15:53 GMT',
+      connection: 'close',
+      'content-length': '0'
+    },
+    [Symbol(kHeadersCount)]: 10,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0,
+    [Symbol(RequestTimeout)]: undefined
+  },
+  request: Test {
+    _events: [Object: null prototype] {
+      response: [Function (anonymous)],
+      redirect: [Array]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    _agent: false,
+    _formData: null,
+    method: 'put',
+    url: 'http://127.0.0.1:61398/api/restockOrder/49/skuItems',
+    _header: {
+      'user-agent': 'node-superagent/3.8.3',
+      'content-type': 'application/json'
+    },
+    header: {
+      'User-Agent': 'node-superagent/3.8.3',
+      'Content-Type': 'application/json'
+    },
+    writable: true,
+    _redirects: 0,
+    _maxRedirects: 5,
+    cookies: '',
+    qs: {},
+    _query: [],
+    qsRaw: [],
+    _redirectList: [],
+    _streamRequest: false,
+    app: Server {
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      _connections: 0,
+      _handle: [TCP],
+      _usingWorkers: false,
+      _workers: [],
+      _unref: false,
+      allowHalfOpen: true,
+      pauseOnConnect: false,
+      httpAllowHalfOpen: false,
+      timeout: 0,
+      keepAliveTimeout: 5000,
+      maxHeadersCount: null,
+      maxRequestsPerSocket: 0,
+      headersTimeout: 60000,
+      requestTimeout: 0,
+      _connectionKey: '6::::0',
+      [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+      [Symbol(ServerResponse)]: [Function: ServerResponse],
+      [Symbol(kCapture)]: false,
+      [Symbol(async_id_symbol)]: 9
+    },
+    _okCallback: [Function (anonymous)],
+    _data: { skuItems: [Array] },
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/49/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61398\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/49/skuItems',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    protocol: 'http:',
+    host: '127.0.0.1:61398',
+    _endCalled: true,
+    _callback: [Function (anonymous)],
+    _fullfilledPromise: Promise { [Circular *2] },
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [ClientRequest],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    response: [Circular *2],
+    called: true,
+    [Symbol(kCapture)]: false
+  },
+  req: <ref *3> ClientRequest {
+    _events: [Object: null prototype] {
+      drain: [Function],
+      error: [Function],
+      prefinish: [Function: requestOnPrefinish]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: false,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    _contentLength: 146,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: false,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [Circular *3],
+      [Symbol(async_id_symbol)]: 3098,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _header: 'PUT /api/restockOrder/49/skuItems HTTP/1.1\r\n' +
+      'Host: 127.0.0.1:61398\r\n' +
+      'Accept-Encoding: gzip, deflate\r\n' +
+      'User-Agent: node-superagent/3.8.3\r\n' +
+      'Content-Type: application/json\r\n' +
+      'Content-Length: 146\r\n' +
+      'Connection: close\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype],
+      freeSockets: [Object: null prototype] {},
+      keepAliveMsecs: 1000,
+      keepAlive: false,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'PUT',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    path: '/api/restockOrder/49/skuItems',
+    _ended: true,
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *3],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: '127.0.0.1',
+    protocol: 'http:',
+    [Symbol(kCapture)]: false,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      host: [Array],
+      'accept-encoding': [Array],
+      'user-agent': [Array],
+      'content-type': [Array],
+      'content-length': [Array]
+    }
+  },
+  text: '',
+  body: '',
+  files: undefined,
+  buffered: true,
+  headers: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:53 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  header: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:53 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  statusCode: 422,
+  status: 422,
+  statusType: 4,
+  info: false,
+  ok: false,
+  redirect: false,
+  clientError: true,
+  serverError: false,
+  error: Error: cannot PUT /api/restockOrder/49/skuItems (422)
+      at Response.toError (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:94:15)
+      at ResponseBase._setStatusProperties (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\response-base.js:123:16)
+      at new Response (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:41:8)
+      at Test.Request._emitResponse (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:752:20)
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:916:38
+      at IncomingMessage.<anonymous> (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:532:35)
+      at endReadableNT (node:internal/streams/readable:1346:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+    status: 422,
+    text: '',
+    method: 'PUT',
+    path: '/api/restockOrder/49/skuItems'
+  },
+  created: false,
+  accepted: false,
+  noContent: false,
+  badRequest: false,
+  unauthorized: false,
+  notAcceptable: false,
+  forbidden: false,
+  notFound: false,
+  unprocessableEntity: true,
+  type: 'application/json',
+  charset: 'utf-8',
+  links: {},
+  setEncoding: [Function: bound ],
+  redirects: [],
+  [Symbol(kCapture)]: false
+}
+      1) Change a state of a restock order
+     get /api/restockOrders
+      ✔  get all restock orders
+    put /api/restockOrder/:id/skuItems
+IN MODIFY SKU IT REST ORD WITH: 1000000  ,  {
+  skuItems: [
+    { SKUId: 12, itemId: 1, rfid: '12345678901234567890123456789015' },
+    { SKUId: 12, itemId: 1, rfid: '12345678901234567890123456789016' }
+  ]
+}
+SKUITS EXISTING: [
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 75,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 75,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  },
+  {
+    RFID: '12345678901234567890123456789017',
+    SKUId: 76,
+    Available: 0,
+    DateOfStock: '2022/11/29 20:45'
+  },
+  {
+    RFID: '12345678901234567890123456789018',
+    SKUId: 76,
+    Available: 0,
+    DateOfStock: '2022/12/29 20:45'
+  }
+]
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id/skuItems
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id/transportNote
+49
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id/transportNote
+49
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id/transportNote
+      ✔ Change a state of a restock order
+    Removing all Restock orders
+[
+  {
+    id: 49,
+    issueDate: '2022/05/16 09:33',
+    state: 'DELIVERY',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: { deliveryDate: '2023/12/29 03:00' },
+    skuItems: []
+  },
+  {
+    id: 50,
+    issueDate: '2022/05/17 19:00',
+    state: 'ISSUED',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: null,
+    skuItems: []
+  }
+]
+Deleted 49
+Deleted 50
+done!
+      ✔ Getting and removing
+    removing all skuitems
+[
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 75,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 75,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  },
+  {
+    RFID: '12345678901234567890123456789017',
+    SKUId: 76,
+    Available: 0,
+    DateOfStock: '2022/11/29 20:45'
+  },
+  {
+    RFID: '12345678901234567890123456789018',
+    SKUId: 76,
+    Available: 0,
+    DateOfStock: '2022/12/29 20:45'
+  }
+]
+Deleted 12345678901234567890123456789015
+Deleted 12345678901234567890123456789016
+Deleted 12345678901234567890123456789017
+Deleted 12345678901234567890123456789018
+done!
+      ✔ Getting SKUitems
+    removing all skus
+[
+  {
+    id: 75,
+    description: 'a',
+    weight: 20,
+    volume: 30,
+    notes: 'b',
+    position: null,
+    availableQuantity: 40,
+    price: 10,
+    testDescriptors: []
+  },
+  {
+    id: 76,
+    description: 'c',
+    weight: 40,
+    volume: 30,
+    notes: 'd',
+    position: null,
+    availableQuantity: 20,
+    price: 10,
+    testDescriptors: []
+  }
+]
+Deleted 75
+Deleted 76
+done!
+      ✔ Getting SKUs
+
+  Test CR1 ReturnOrder
+    Removing all return orders
+[
+  {
+    id: 12,
+    returnDate: '2022/05/16 23:33',
+    products: [ [Object], [Object] ],
+    restockOrderId: 48
+  }
+]
+Deleted 12
+done
+      ✔ Getting and removing
+     get /api/returnOrders
+      ✔  get all return orders
+    Removing all Restock orders
+[]
+done!
+      ✔ Getting and removing
+     get /api/restockOrders
+      ✔  get all restock orders
+    removing all skuitems
+[]
+done!
+      ✔ Getting SKUitems
+    get /api/skuitems
+undefined
+      ✔ Getting SKUitems
+    removing all skus
+[]
+done!
+      ✔ Getting SKUs
+    get /api/skus
+      ✔ FR 2.3 -> List all SKUs
+     Delete all not manager
+[
+  {
+    id: 1,
+    name: 'supName',
+    surname: 'supSur',
+    email: 'supp1@ezwh.com',
+    type: 'supplier'
+  },
+  {
+    id: 2,
+    name: 'supName2',
+    surname: 'supSur2',
+    email: 'supp2@ezwh.com',
+    type: 'supplier'
+  }
+]
+supp1@ezwh.com
+{}
+Deleted supp1@ezwh.com
+supp2@ezwh.com
+{}
+Deleted supp2@ezwh.com
+done!
+      ✔ Cleaning db user util
+    post /api/sku/
+      ✔ FR 2.1 a -> Define a new SKU
+    post /api/sku/
+      ✔ FR 2.1 a -> Define a new SKU
+    get /api/skus
+      ✔ FR 2.3 -> List all SKUs
+     post /api/newUser
+      ✔ FR 1.1 a -> Define a new user
+     post /api/newUser
+      ✔ FR 1.1 a -> Define a new user
+    post /api/skuitem/
+      ✔ Adding skuitem details
+    post /api/skuitem/
+      ✔ Adding skuitem details
+     get /api/suppliers
+      ✔  get all suppliers
+    Removing all Items
+[
+  {
+    id: 1,
+    description: 'desc0',
+    price: 9.99,
+    SKUId: 75,
+    supplierId: 1
+  },
+  {
+    id: 2,
+    description: 'desc1',
+    price: 199.99,
+    SKUId: 76,
+    supplierId: 1
+  }
+]
+Deleted 1 by supplier 1
+Deleted 2 by supplier 1
+      ✔ get /api/items/
+    post /api/item/
+      ✔ Adding item details
+    post /api/item/
+      ✔ Adding item details
+    post /api/restockOrder
+
+      ✔  Create a restock order
+    post /api/restockOrder
+
+      ✔  Create a restock order
+     get /api/restockOrders
+      ✔  get all restock orders
+    put /api/restockOrder/:id
+      ✔ Change a state of a restock order
+    put /api/restockOrder/:id/skuItems
+[
+  { SKUId: 78, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 78, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+this is skuitems  [
+  { SKUId: 78, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 78, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+IN MODIFY SKU IT REST ORD WITH: 51  ,  {
+  skuItems: [
+    { SKUId: 78, itemId: 1, rfid: '12345678901234567890123456789017' },
+    { SKUId: 78, itemId: 1, rfid: '12345678901234567890123456789018' }
+  ]
+}
+SKUITS EXISTING: [
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 77,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 77,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  }
+]
+GOT RESTOCK ORDER, {
+  issueDate: '2022/05/16 09:33',
+  state: 'DELIVERED',
+  products: [
+    {
+      SKUId: 77,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      qty: 1
+    },
+    {
+      SKUId: 78,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      qty: 1
+    }
+  ],
+  supplierId: 1,
+  transportNote: null,
+  skuItems: []
+}
+TRYING TO GET SKUIT  12345678901234567890123456789017
+TRYING TO GET SKUIT  12345678901234567890123456789018
+SKU IT  12345678901234567890123456789017  , DOESN'T EXISTS
+CATCHED PROMISE.ALL ERROR
+SKU IT  12345678901234567890123456789018  , DOESN'T EXISTS
+<ref *2> Response {
+  _events: [Object: null prototype] {},
+  _eventsCount: 0,
+  _maxListeners: undefined,
+  res: <ref *1> IncomingMessage {
+    _readableState: ReadableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: [],
+      flowing: true,
+      ended: true,
+      endEmitted: true,
+      reading: false,
+      constructed: true,
+      sync: true,
+      needReadable: false,
+      emittedReadable: false,
+      readableListening: false,
+      resumeScheduled: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: true,
+      destroyed: true,
+      errored: null,
+      closed: true,
+      closeEmitted: true,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      multiAwaitDrain: false,
+      readingMore: true,
+      dataEmitted: false,
+      decoder: [StringDecoder],
+      encoding: 'utf8',
+      [Symbol(kPaused)]: false
+    },
+    _events: [Object: null prototype] {
+      end: [Array],
+      data: [Array],
+      error: [Array],
+      close: [Function: bound emit]
+    },
+    _eventsCount: 4,
+    _maxListeners: undefined,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 5444,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'X-Powered-By',
+      'Express',
+      'Content-Type',
+      'application/json; charset=utf-8',
+      'Date',
+      'Thu, 07 Jul 2022 15:15:54 GMT',
+      'Connection',
+      'close',
+      'Content-Length',
+      '0'
+    ],
+    rawTrailers: [],
+    aborted: false,
+    upgrade: false,
+    url: '',
+    method: null,
+    statusCode: 422,
+    statusMessage: 'Unprocessable Entity',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 5444,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _consuming: false,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/51/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61399\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/51/skuItems',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    text: '',
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'x-powered-by': 'Express',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+      connection: 'close',
+      'content-length': '0'
+    },
+    [Symbol(kHeadersCount)]: 10,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0,
+    [Symbol(RequestTimeout)]: undefined
+  },
+  request: Test {
+    _events: [Object: null prototype] {
+      response: [Function (anonymous)],
+      redirect: [Array]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    _agent: false,
+    _formData: null,
+    method: 'put',
+    url: 'http://127.0.0.1:61399/api/restockOrder/51/skuItems',
+    _header: {
+      'user-agent': 'node-superagent/3.8.3',
+      'content-type': 'application/json'
+    },
+    header: {
+      'User-Agent': 'node-superagent/3.8.3',
+      'Content-Type': 'application/json'
+    },
+    writable: true,
+    _redirects: 0,
+    _maxRedirects: 5,
+    cookies: '',
+    qs: {},
+    _query: [],
+    qsRaw: [],
+    _redirectList: [],
+    _streamRequest: false,
+    app: Server {
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      _connections: 0,
+      _handle: [TCP],
+      _usingWorkers: false,
+      _workers: [],
+      _unref: false,
+      allowHalfOpen: true,
+      pauseOnConnect: false,
+      httpAllowHalfOpen: false,
+      timeout: 0,
+      keepAliveTimeout: 5000,
+      maxHeadersCount: null,
+      maxRequestsPerSocket: 0,
+      headersTimeout: 60000,
+      requestTimeout: 0,
+      _connectionKey: '6::::0',
+      [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+      [Symbol(ServerResponse)]: [Function: ServerResponse],
+      [Symbol(kCapture)]: false,
+      [Symbol(async_id_symbol)]: 11
+    },
+    _okCallback: [Function (anonymous)],
+    _data: { skuItems: [Array] },
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/51/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61399\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/51/skuItems',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    protocol: 'http:',
+    host: '127.0.0.1:61399',
+    _endCalled: true,
+    _callback: [Function (anonymous)],
+    _fullfilledPromise: Promise { [Circular *2] },
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [ClientRequest],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    response: [Circular *2],
+    called: true,
+    [Symbol(kCapture)]: false
+  },
+  req: <ref *3> ClientRequest {
+    _events: [Object: null prototype] {
+      drain: [Function],
+      error: [Function],
+      prefinish: [Function: requestOnPrefinish]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: false,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    _contentLength: 146,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: false,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [Circular *3],
+      [Symbol(async_id_symbol)]: 5444,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _header: 'PUT /api/restockOrder/51/skuItems HTTP/1.1\r\n' +
+      'Host: 127.0.0.1:61399\r\n' +
+      'Accept-Encoding: gzip, deflate\r\n' +
+      'User-Agent: node-superagent/3.8.3\r\n' +
+      'Content-Type: application/json\r\n' +
+      'Content-Length: 146\r\n' +
+      'Connection: close\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype],
+      freeSockets: [Object: null prototype] {},
+      keepAliveMsecs: 1000,
+      keepAlive: false,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'PUT',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    path: '/api/restockOrder/51/skuItems',
+    _ended: true,
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *3],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: '127.0.0.1',
+    protocol: 'http:',
+    [Symbol(kCapture)]: false,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      host: [Array],
+      'accept-encoding': [Array],
+      'user-agent': [Array],
+      'content-type': [Array],
+      'content-length': [Array]
+    }
+  },
+  text: '',
+  body: '',
+  files: undefined,
+  buffered: true,
+  headers: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  header: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  statusCode: 422,
+  status: 422,
+  statusType: 4,
+  info: false,
+  ok: false,
+  redirect: false,
+  clientError: true,
+  serverError: false,
+  error: Error: cannot PUT /api/restockOrder/51/skuItems (422)
+      at Response.toError (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:94:15)
+      at ResponseBase._setStatusProperties (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\response-base.js:123:16)
+      at new Response (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:41:8)
+      at Test.Request._emitResponse (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:752:20)
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:916:38
+      at IncomingMessage.<anonymous> (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:532:35)
+      at endReadableNT (node:internal/streams/readable:1346:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+    status: 422,
+    text: '',
+    method: 'PUT',
+    path: '/api/restockOrder/51/skuItems'
+  },
+  created: false,
+  accepted: false,
+  noContent: false,
+  badRequest: false,
+  unauthorized: false,
+  notAcceptable: false,
+  forbidden: false,
+  notFound: false,
+  unprocessableEntity: true,
+  type: 'application/json',
+  charset: 'utf-8',
+  links: {},
+  setEncoding: [Function: bound ],
+  redirects: [],
+  [Symbol(kCapture)]: false
+}
+      2) Change a state of a restock order
+     get /api/restockOrders
+      ✔  get all restock orders
+     get /api/restockOrderIssued
+      ✔  get all restock order issued
+     post /api/returnOrder
+[
+  {
+    SKUId: 77,
+    itemId: 1,
+    description: 'descr0',
+    price: 8.99,
+    qty: undefined
+  },
+  {
+    SKUId: 78,
+    itemId: 2,
+    description: 'descr1',
+    price: 6.99,
+    qty: undefined
+  }
+]
+TRYING TO GET SKUIT  12345678901234567890123456789017
+SKU IT  12345678901234567890123456789017  , DOESN'T EXISTS
+
+{
+  returnDate: '2022/05/16 23:33',
+  products: [
+    {
+      SKUId: 77,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      RFID: '12345678901234567890123456789017'
+    },
+    {
+      SKUId: 78,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      RFID: '12345678901234567890123456789018'
+    }
+  ],
+  restockOrderId: 52
+}
+      ✔  Create a return order
+     post /api/returnOrder
+[
+  {
+    SKUId: 77,
+    itemId: 1,
+    description: 'descr0',
+    price: 8.99,
+    qty: undefined
+  },
+  {
+    SKUId: 78,
+    itemId: 2,
+    description: 'descr1',
+    price: 6.99,
+    qty: undefined
+  }
+]
+
+{
+  returnDate: '2022/05/16 23:33',
+  products: [
+    {
+      SKUId: 77,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      RFID: '12345678901234567890123456789017'
+    },
+    {
+      SKUId: 78,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      RFID: '12345678901234567890123456789018'
+    }
+  ],
+  restockOrderId: 100000
+}
+      ✔  Create a return order
+     post /api/returnOrder
+      ✔  Create a return order
+     get /api/returnOrders
+      ✔  get all return orders
+     get /api/returnOrders/:id
+      ✔  get return order by id
+
+  Testing Change1 requirements
+    Test CR1 Item
+      Removing all Items
+[
+  {
+    id: 1,
+    description: 'desc0',
+    price: 9.99,
+    SKUId: 77,
+    supplierId: 1
+  },
+  {
+    id: 2,
+    description: 'desc1',
+    price: 199.99,
+    SKUId: 78,
+    supplierId: 1
+  }
+]
+Deleted 1 by supplier 1
+Deleted 2 by supplier 1
+        ✔ get /api/items/
+      Get all items
+[]
+        ✔ get /api/items/
+      removing all skuitems
+[
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 77,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 77,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  }
+]
+Deleted 12345678901234567890123456789015
+Deleted 12345678901234567890123456789016
+done!
+        ✔ Getting SKUitems
+      get /api/skuitems
+undefined
+        ✔ Getting SKUitems
+      removing all skus
+[
+  {
+    id: 77,
+    description: 'a',
+    weight: 20,
+    volume: 30,
+    notes: 'b',
+    position: null,
+    availableQuantity: 40,
+    price: 10,
+    testDescriptors: []
+  },
+  {
+    id: 78,
+    description: 'c',
+    weight: 40,
+    volume: 30,
+    notes: 'd',
+    position: null,
+    availableQuantity: 20,
+    price: 10,
+    testDescriptors: []
+  }
+]
+Deleted 77
+Deleted 78
+done!
+        ✔ Getting SKUs
+      get /api/skus
+        ✔ FR 2.3 -> List all SKUs
+       Delete all not manager
+[
+  {
+    id: 1,
+    name: 'supName',
+    surname: 'supSur',
+    email: 'supp1@ezwh.com',
+    type: 'supplier'
+  },
+  {
+    id: 2,
+    name: 'supName2',
+    surname: 'supSur2',
+    email: 'supp2@ezwh.com',
+    type: 'supplier'
+  }
+]
+supp1@ezwh.com
+{}
+Deleted supp1@ezwh.com
+supp2@ezwh.com
+{}
+Deleted supp2@ezwh.com
+done!
+        ✔ Cleaning db user util
+       post /api/newUser
+        ✔ FR 1.1 a -> Define a new user
+       post /api/newUser
+        ✔ FR 1.1 a -> Define a new user
+       get /api/suppliers
+        ✔  get all suppliers
+      post /api/sku/
+        ✔ FR 2.1 a -> Define a new SKU
+      post /api/sku/
+        ✔ FR 2.1 a -> Define a new SKU
+      get /api/skus
+        ✔ FR 2.3 -> List all SKUs
+      post /api/item/
+        ✔ Adding item details
+      post /api/item/
+        ✔ Adding item details
+      Get all items
+[
+  {
+    id: 0,
+    description: 'desc0',
+    price: 9.99,
+    SKUId: 79,
+    supplierId: 1
+  }
+]
+        ✔ get /api/items/
+      get /api/items/:id
+        ✔ Gettim item details
+      get /api/items/:id
+        ✔ Gettim item details
+       put /api/item/:id
+        ✔ Modify an item given its ID and new fields
+       put /api/item/:id
+{
+  id: 0,
+  description: 'newDesc',
+  price: 99.99,
+  SKUId: 79,
+  supplierId: 1
+}
+        ✔ Modify an item given its ID and new fields
+       delete /api/items/:id
+        ✔ Delete an item given its id
+      Removing all Items
+[]
+        ✔ get /api/items/
+      removing all skuitems
+[]
+done!
+        ✔ Getting SKUitems
+      removing all skus
+[
+  {
+    id: 79,
+    description: 'a',
+    weight: 20,
+    volume: 30,
+    notes: 'b',
+    position: null,
+    availableQuantity: 40,
+    price: 10,
+    testDescriptors: []
+  },
+  {
+    id: 80,
+    description: 'c',
+    weight: 40,
+    volume: 30,
+    notes: 'd',
+    position: null,
+    availableQuantity: 20,
+    price: 10,
+    testDescriptors: []
+  }
+]
+Deleted 79
+Deleted 80
+done!
+        ✔ Getting SKUs
+    Test CR1 RestockOrder
+      Removing all Restock orders
+[
+  {
+    id: 51,
+    issueDate: '2022/05/16 09:33',
+    state: 'DELIVERED',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: null,
+    skuItems: []
+  },
+  {
+    id: 52,
+    issueDate: '2022/05/17 19:00',
+    state: 'ISSUED',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: null,
+    skuItems: []
+  }
+]
+Deleted 51
+Deleted 52
+done!
+        ✔ Getting and removing
+       get /api/restockOrders
+        ✔  get all restock orders
+      removing all skuitems
+[]
+done!
+        ✔ Getting SKUitems
+      get /api/skuitems
+undefined
+        ✔ Getting SKUitems
+      removing all skus
+[]
+done!
+        ✔ Getting SKUs
+      get /api/skus
+        ✔ FR 2.3 -> List all SKUs
+       Delete all not manager
+[
+  {
+    id: 1,
+    name: 'supName',
+    surname: 'supSur',
+    email: 'supp1@ezwh.com',
+    type: 'supplier'
+  },
+  {
+    id: 2,
+    name: 'supName2',
+    surname: 'supSur2',
+    email: 'supp2@ezwh.com',
+    type: 'supplier'
+  }
+]
+supp1@ezwh.com
+{}
+Deleted supp1@ezwh.com
+supp2@ezwh.com
+{}
+Deleted supp2@ezwh.com
+done!
+        ✔ Cleaning db user util
+      post /api/sku/
+        ✔ FR 2.1 a -> Define a new SKU
+      post /api/sku/
+        ✔ FR 2.1 a -> Define a new SKU
+      get /api/skus
+        ✔ FR 2.3 -> List all SKUs
+       post /api/newUser
+        ✔ FR 1.1 a -> Define a new user
+       post /api/newUser
+        ✔ FR 1.1 a -> Define a new user
+      post /api/skuitem/
+        ✔ Adding skuitem details
+      post /api/skuitem/
+        ✔ Adding skuitem details
+       get /api/suppliers
+        ✔  get all suppliers
+      Removing all Items
+[]
+        ✔ get /api/items/
+      post /api/item/
+        ✔ Adding item details
+      post /api/item/
+        ✔ Adding item details
+      post /api/restockOrder
+
+        ✔  Create a restock order
+      post /api/restockOrder
+
+        ✔  Create a restock order
+      post /api/restockOrder
+
+        ✔  Create a restock order
+       get /api/restockOrders
+        ✔  get all restock orders
+      put /api/restockOrder/:id
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id
+        ✔ Change a state of a restock order
+       get /api/restockOrders
+        ✔  get all restock orders
+      post /api/skuitem/
+        ✔ Adding skuitem details
+      post /api/skuitem/
+        ✔ Adding skuitem details
+      put /api/restockOrder/:id/skuItems
+[
+  { SKUId: 82, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 82, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+this is skuitems  [
+  { SKUId: 82, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 82, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+IN MODIFY SKU IT REST ORD WITH: 53  ,  {
+  skuItems: [
+    { SKUId: 82, itemId: 1, rfid: '12345678901234567890123456789017' },
+    { SKUId: 82, itemId: 1, rfid: '12345678901234567890123456789018' }
+  ]
+}
+SKUITS EXISTING: [
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 81,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 81,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  },
+  {
+    RFID: '12345678901234567890123456789017',
+    SKUId: 82,
+    Available: 0,
+    DateOfStock: '2022/11/29 20:45'
+  },
+  {
+    RFID: '12345678901234567890123456789018',
+    SKUId: 82,
+    Available: 0,
+    DateOfStock: '2022/12/29 20:45'
+  }
+]
+GOT RESTOCK ORDER, {
+  issueDate: '2022/05/16 09:33',
+  state: 'DELIVERED',
+  products: [
+    {
+      SKUId: 81,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      qty: 1
+    },
+    {
+      SKUId: 82,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      qty: 1
+    }
+  ],
+  supplierId: 1,
+  transportNote: null,
+  skuItems: []
+}
+TRYING TO GET SKUIT  12345678901234567890123456789017
+TRYING TO GET SKUIT  12345678901234567890123456789018
+SKU ITS ALREADY EXISTS CHECK PASSED
+<ref *2> Response {
+  _events: [Object: null prototype] {},
+  _eventsCount: 0,
+  _maxListeners: undefined,
+  res: <ref *1> IncomingMessage {
+    _readableState: ReadableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: [],
+      flowing: true,
+      ended: true,
+      endEmitted: true,
+      reading: false,
+      constructed: true,
+      sync: true,
+      needReadable: false,
+      emittedReadable: false,
+      readableListening: false,
+      resumeScheduled: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: true,
+      destroyed: true,
+      errored: null,
+      closed: true,
+      closeEmitted: true,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      multiAwaitDrain: false,
+      readingMore: true,
+      dataEmitted: false,
+      decoder: [StringDecoder],
+      encoding: 'utf8',
+      [Symbol(kPaused)]: false
+    },
+    _events: [Object: null prototype] {
+      end: [Array],
+      data: [Array],
+      error: [Array],
+      close: [Function: bound emit]
+    },
+    _eventsCount: 4,
+    _maxListeners: undefined,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 8967,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'X-Powered-By',
+      'Express',
+      'Content-Type',
+      'application/json; charset=utf-8',
+      'Date',
+      'Thu, 07 Jul 2022 15:15:54 GMT',
+      'Connection',
+      'close',
+      'Content-Length',
+      '0'
+    ],
+    rawTrailers: [],
+    aborted: false,
+    upgrade: false,
+    url: '',
+    method: null,
+    statusCode: 422,
+    statusMessage: 'Unprocessable Entity',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 8967,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _consuming: false,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/53/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61398\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/53/skuItems',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    text: '',
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'x-powered-by': 'Express',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+      connection: 'close',
+      'content-length': '0'
+    },
+    [Symbol(kHeadersCount)]: 10,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0,
+    [Symbol(RequestTimeout)]: undefined
+  },
+  request: Test {
+    _events: [Object: null prototype] {
+      response: [Function (anonymous)],
+      redirect: [Array]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    _agent: false,
+    _formData: null,
+    method: 'put',
+    url: 'http://127.0.0.1:61398/api/restockOrder/53/skuItems',
+    _header: {
+      'user-agent': 'node-superagent/3.8.3',
+      'content-type': 'application/json'
+    },
+    header: {
+      'User-Agent': 'node-superagent/3.8.3',
+      'Content-Type': 'application/json'
+    },
+    writable: true,
+    _redirects: 0,
+    _maxRedirects: 5,
+    cookies: '',
+    qs: {},
+    _query: [],
+    qsRaw: [],
+    _redirectList: [],
+    _streamRequest: false,
+    app: Server {
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      _connections: 0,
+      _handle: [TCP],
+      _usingWorkers: false,
+      _workers: [],
+      _unref: false,
+      allowHalfOpen: true,
+      pauseOnConnect: false,
+      httpAllowHalfOpen: false,
+      timeout: 0,
+      keepAliveTimeout: 5000,
+      maxHeadersCount: null,
+      maxRequestsPerSocket: 0,
+      headersTimeout: 60000,
+      requestTimeout: 0,
+      _connectionKey: '6::::0',
+      [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+      [Symbol(ServerResponse)]: [Function: ServerResponse],
+      [Symbol(kCapture)]: false,
+      [Symbol(async_id_symbol)]: 9
+    },
+    _okCallback: [Function (anonymous)],
+    _data: { skuItems: [Array] },
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/53/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61398\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/53/skuItems',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    protocol: 'http:',
+    host: '127.0.0.1:61398',
+    _endCalled: true,
+    _callback: [Function (anonymous)],
+    _fullfilledPromise: Promise { [Circular *2] },
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [ClientRequest],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    response: [Circular *2],
+    called: true,
+    [Symbol(kCapture)]: false
+  },
+  req: <ref *3> ClientRequest {
+    _events: [Object: null prototype] {
+      drain: [Function],
+      error: [Function],
+      prefinish: [Function: requestOnPrefinish]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: false,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    _contentLength: 146,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: false,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [Circular *3],
+      [Symbol(async_id_symbol)]: 8967,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _header: 'PUT /api/restockOrder/53/skuItems HTTP/1.1\r\n' +
+      'Host: 127.0.0.1:61398\r\n' +
+      'Accept-Encoding: gzip, deflate\r\n' +
+      'User-Agent: node-superagent/3.8.3\r\n' +
+      'Content-Type: application/json\r\n' +
+      'Content-Length: 146\r\n' +
+      'Connection: close\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype],
+      freeSockets: [Object: null prototype] {},
+      keepAliveMsecs: 1000,
+      keepAlive: false,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'PUT',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    path: '/api/restockOrder/53/skuItems',
+    _ended: true,
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *3],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: '127.0.0.1',
+    protocol: 'http:',
+    [Symbol(kCapture)]: false,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      host: [Array],
+      'accept-encoding': [Array],
+      'user-agent': [Array],
+      'content-type': [Array],
+      'content-length': [Array]
+    }
+  },
+  text: '',
+  body: '',
+  files: undefined,
+  buffered: true,
+  headers: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  header: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  statusCode: 422,
+  status: 422,
+  statusType: 4,
+  info: false,
+  ok: false,
+  redirect: false,
+  clientError: true,
+  serverError: false,
+  error: Error: cannot PUT /api/restockOrder/53/skuItems (422)
+      at Response.toError (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:94:15)
+      at ResponseBase._setStatusProperties (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\response-base.js:123:16)
+      at new Response (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:41:8)
+      at Test.Request._emitResponse (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:752:20)
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:916:38
+      at IncomingMessage.<anonymous> (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:532:35)
+      at endReadableNT (node:internal/streams/readable:1346:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+    status: 422,
+    text: '',
+    method: 'PUT',
+    path: '/api/restockOrder/53/skuItems'
+  },
+  created: false,
+  accepted: false,
+  noContent: false,
+  badRequest: false,
+  unauthorized: false,
+  notAcceptable: false,
+  forbidden: false,
+  notFound: false,
+  unprocessableEntity: true,
+  type: 'application/json',
+  charset: 'utf-8',
+  links: {},
+  setEncoding: [Function: bound ],
+  redirects: [],
+  [Symbol(kCapture)]: false
+}
+        3) Change a state of a restock order
+       get /api/restockOrders
+        ✔  get all restock orders
+      put /api/restockOrder/:id/skuItems
+IN MODIFY SKU IT REST ORD WITH: 1000000  ,  {
+  skuItems: [
+    { SKUId: 12, itemId: 1, rfid: '12345678901234567890123456789015' },
+    { SKUId: 12, itemId: 1, rfid: '12345678901234567890123456789016' }
+  ]
+}
+SKUITS EXISTING: [
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 81,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 81,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  },
+  {
+    RFID: '12345678901234567890123456789017',
+    SKUId: 82,
+    Available: 0,
+    DateOfStock: '2022/11/29 20:45'
+  },
+  {
+    RFID: '12345678901234567890123456789018',
+    SKUId: 82,
+    Available: 0,
+    DateOfStock: '2022/12/29 20:45'
+  }
+]
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id/skuItems
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id/transportNote
+53
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id/transportNote
+53
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id/transportNote
+        ✔ Change a state of a restock order
+      Removing all Restock orders
+[
+  {
+    id: 53,
+    issueDate: '2022/05/16 09:33',
+    state: 'DELIVERY',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: { deliveryDate: '2023/12/29 03:00' },
+    skuItems: []
+  },
+  {
+    id: 54,
+    issueDate: '2022/05/17 19:00',
+    state: 'ISSUED',
+    products: [ [Object], [Object] ],
+    supplierId: 1,
+    transportNote: null,
+    skuItems: []
+  }
+]
+Deleted 53
+Deleted 54
+done!
+        ✔ Getting and removing
+      removing all skuitems
+[
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 81,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 81,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  },
+  {
+    RFID: '12345678901234567890123456789017',
+    SKUId: 82,
+    Available: 0,
+    DateOfStock: '2022/11/29 20:45'
+  },
+  {
+    RFID: '12345678901234567890123456789018',
+    SKUId: 82,
+    Available: 0,
+    DateOfStock: '2022/12/29 20:45'
+  }
+]
+Deleted 12345678901234567890123456789015
+Deleted 12345678901234567890123456789016
+Deleted 12345678901234567890123456789017
+Deleted 12345678901234567890123456789018
+done!
+        ✔ Getting SKUitems
+      removing all skus
+[
+  {
+    id: 81,
+    description: 'a',
+    weight: 20,
+    volume: 30,
+    notes: 'b',
+    position: null,
+    availableQuantity: 40,
+    price: 10,
+    testDescriptors: []
+  },
+  {
+    id: 82,
+    description: 'c',
+    weight: 40,
+    volume: 30,
+    notes: 'd',
+    position: null,
+    availableQuantity: 20,
+    price: 10,
+    testDescriptors: []
+  }
+]
+Deleted 81
+Deleted 82
+done!
+        ✔ Getting SKUs
+    Test CR1 ReturnOrder
+      Removing all return orders
+[
+  {
+    id: 13,
+    returnDate: '2022/05/16 23:33',
+    products: [ [Object], [Object] ],
+    restockOrderId: 52
+  }
+]
+Deleted 13
+done
+        ✔ Getting and removing
+       get /api/returnOrders
+        ✔  get all return orders
+      Removing all Restock orders
+[]
+done!
+        ✔ Getting and removing
+       get /api/restockOrders
+        ✔  get all restock orders
+      removing all skuitems
+[]
+done!
+        ✔ Getting SKUitems
+      get /api/skuitems
+undefined
+        ✔ Getting SKUitems
+      removing all skus
+[]
+done!
+        ✔ Getting SKUs
+      get /api/skus
+        ✔ FR 2.3 -> List all SKUs
+       Delete all not manager
+[
+  {
+    id: 1,
+    name: 'supName',
+    surname: 'supSur',
+    email: 'supp1@ezwh.com',
+    type: 'supplier'
+  },
+  {
+    id: 2,
+    name: 'supName2',
+    surname: 'supSur2',
+    email: 'supp2@ezwh.com',
+    type: 'supplier'
+  }
+]
+supp1@ezwh.com
+{}
+Deleted supp1@ezwh.com
+supp2@ezwh.com
+{}
+Deleted supp2@ezwh.com
+done!
+        ✔ Cleaning db user util
+      post /api/sku/
+        ✔ FR 2.1 a -> Define a new SKU
+      post /api/sku/
+        ✔ FR 2.1 a -> Define a new SKU
+      get /api/skus
+        ✔ FR 2.3 -> List all SKUs
+       post /api/newUser
+        ✔ FR 1.1 a -> Define a new user
+       post /api/newUser
+        ✔ FR 1.1 a -> Define a new user
+      post /api/skuitem/
+        ✔ Adding skuitem details
+      post /api/skuitem/
+        ✔ Adding skuitem details
+       get /api/suppliers
+        ✔  get all suppliers
+      Removing all Items
+[
+  {
+    id: 1,
+    description: 'desc0',
+    price: 9.99,
+    SKUId: 81,
+    supplierId: 1
+  },
+  {
+    id: 2,
+    description: 'desc1',
+    price: 199.99,
+    SKUId: 82,
+    supplierId: 1
+  }
+]
+Deleted 1 by supplier 1
+Deleted 2 by supplier 1
+        ✔ get /api/items/
+      post /api/item/
+        ✔ Adding item details
+      post /api/item/
+        ✔ Adding item details
+      post /api/restockOrder
+
+        ✔  Create a restock order
+      post /api/restockOrder
+
+        ✔  Create a restock order
+       get /api/restockOrders
+        ✔  get all restock orders
+      put /api/restockOrder/:id
+        ✔ Change a state of a restock order
+      put /api/restockOrder/:id/skuItems
+[
+  { SKUId: 84, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 84, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+this is skuitems  [
+  { SKUId: 84, itemId: 1, rfid: '12345678901234567890123456789017' },
+  { SKUId: 84, itemId: 1, rfid: '12345678901234567890123456789018' }
+]
+IN MODIFY SKU IT REST ORD WITH: 55  ,  {
+  skuItems: [
+    { SKUId: 84, itemId: 1, rfid: '12345678901234567890123456789017' },
+    { SKUId: 84, itemId: 1, rfid: '12345678901234567890123456789018' }
+  ]
+}
+SKUITS EXISTING: [
+  {
+    RFID: '12345678901234567890123456789015',
+    SKUId: 83,
+    Available: 0,
+    DateOfStock: '2021/11/29 12:30'
+  },
+  {
+    RFID: '12345678901234567890123456789016',
+    SKUId: 83,
+    Available: 0,
+    DateOfStock: '2021/11/29 21:45'
+  }
+]
+GOT RESTOCK ORDER, {
+  issueDate: '2022/05/16 09:33',
+  state: 'DELIVERED',
+  products: [
+    {
+      SKUId: 83,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      qty: 1
+    },
+    {
+      SKUId: 84,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      qty: 1
+    }
+  ],
+  supplierId: 1,
+  transportNote: null,
+  skuItems: []
+}
+TRYING TO GET SKUIT  12345678901234567890123456789017
+TRYING TO GET SKUIT  12345678901234567890123456789018
+SKU IT  12345678901234567890123456789017  , DOESN'T EXISTS
+CATCHED PROMISE.ALL ERROR
+SKU IT  12345678901234567890123456789018  , DOESN'T EXISTS
+<ref *2> Response {
+  _events: [Object: null prototype] {},
+  _eventsCount: 0,
+  _maxListeners: undefined,
+  res: <ref *1> IncomingMessage {
+    _readableState: ReadableState {
+      objectMode: false,
+      highWaterMark: 16384,
+      buffer: BufferList { head: null, tail: null, length: 0 },
+      length: 0,
+      pipes: [],
+      flowing: true,
+      ended: true,
+      endEmitted: true,
+      reading: false,
+      constructed: true,
+      sync: true,
+      needReadable: false,
+      emittedReadable: false,
+      readableListening: false,
+      resumeScheduled: false,
+      errorEmitted: false,
+      emitClose: true,
+      autoDestroy: true,
+      destroyed: true,
+      errored: null,
+      closed: true,
+      closeEmitted: true,
+      defaultEncoding: 'utf8',
+      awaitDrainWriters: null,
+      multiAwaitDrain: false,
+      readingMore: true,
+      dataEmitted: false,
+      decoder: [StringDecoder],
+      encoding: 'utf8',
+      [Symbol(kPaused)]: false
+    },
+    _events: [Object: null prototype] {
+      end: [Array],
+      data: [Array],
+      error: [Array],
+      close: [Function: bound emit]
+    },
+    _eventsCount: 4,
+    _maxListeners: undefined,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 11382,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    httpVersionMajor: 1,
+    httpVersionMinor: 1,
+    httpVersion: '1.1',
+    complete: true,
+    rawHeaders: [
+      'X-Powered-By',
+      'Express',
+      'Content-Type',
+      'application/json; charset=utf-8',
+      'Date',
+      'Thu, 07 Jul 2022 15:15:54 GMT',
+      'Connection',
+      'close',
+      'Content-Length',
+      '0'
+    ],
+    rawTrailers: [],
+    aborted: false,
+    upgrade: false,
+    url: '',
+    method: null,
+    statusCode: 422,
+    statusMessage: 'Unprocessable Entity',
+    client: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [ClientRequest],
+      [Symbol(async_id_symbol)]: 11382,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _consuming: false,
+    _dumped: false,
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/55/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61399\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/55/skuItems',
+      _ended: true,
+      res: [Circular *1],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    text: '',
+    [Symbol(kCapture)]: false,
+    [Symbol(kHeaders)]: {
+      'x-powered-by': 'Express',
+      'content-type': 'application/json; charset=utf-8',
+      date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+      connection: 'close',
+      'content-length': '0'
+    },
+    [Symbol(kHeadersCount)]: 10,
+    [Symbol(kTrailers)]: null,
+    [Symbol(kTrailersCount)]: 0,
+    [Symbol(RequestTimeout)]: undefined
+  },
+  request: Test {
+    _events: [Object: null prototype] {
+      response: [Function (anonymous)],
+      redirect: [Array]
+    },
+    _eventsCount: 2,
+    _maxListeners: undefined,
+    _agent: false,
+    _formData: null,
+    method: 'put',
+    url: 'http://127.0.0.1:61399/api/restockOrder/55/skuItems',
+    _header: {
+      'user-agent': 'node-superagent/3.8.3',
+      'content-type': 'application/json'
+    },
+    header: {
+      'User-Agent': 'node-superagent/3.8.3',
+      'Content-Type': 'application/json'
+    },
+    writable: true,
+    _redirects: 0,
+    _maxRedirects: 5,
+    cookies: '',
+    qs: {},
+    _query: [],
+    qsRaw: [],
+    _redirectList: [],
+    _streamRequest: false,
+    app: Server {
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      _connections: 0,
+      _handle: [TCP],
+      _usingWorkers: false,
+      _workers: [],
+      _unref: false,
+      allowHalfOpen: true,
+      pauseOnConnect: false,
+      httpAllowHalfOpen: false,
+      timeout: 0,
+      keepAliveTimeout: 5000,
+      maxHeadersCount: null,
+      maxRequestsPerSocket: 0,
+      headersTimeout: 60000,
+      requestTimeout: 0,
+      _connectionKey: '6::::0',
+      [Symbol(IncomingMessage)]: [Function: IncomingMessage],
+      [Symbol(ServerResponse)]: [Function: ServerResponse],
+      [Symbol(kCapture)]: false,
+      [Symbol(async_id_symbol)]: 11
+    },
+    _okCallback: [Function (anonymous)],
+    _data: { skuItems: [Array] },
+    req: ClientRequest {
+      _events: [Object: null prototype],
+      _eventsCount: 3,
+      _maxListeners: undefined,
+      outputData: [],
+      outputSize: 0,
+      writable: true,
+      destroyed: false,
+      _last: true,
+      chunkedEncoding: false,
+      shouldKeepAlive: false,
+      maxRequestsOnConnectionReached: false,
+      _defaultKeepAlive: true,
+      useChunkedEncodingByDefault: true,
+      sendDate: false,
+      _removedConnection: false,
+      _removedContLen: false,
+      _removedTE: false,
+      _contentLength: 146,
+      _hasBody: true,
+      _trailer: '',
+      finished: true,
+      _headerSent: true,
+      _closed: false,
+      socket: [Socket],
+      _header: 'PUT /api/restockOrder/55/skuItems HTTP/1.1\r\n' +
+        'Host: 127.0.0.1:61399\r\n' +
+        'Accept-Encoding: gzip, deflate\r\n' +
+        'User-Agent: node-superagent/3.8.3\r\n' +
+        'Content-Type: application/json\r\n' +
+        'Content-Length: 146\r\n' +
+        'Connection: close\r\n' +
+        '\r\n',
+      _keepAliveTimeout: 0,
+      _onPendingData: [Function: nop],
+      agent: [Agent],
+      socketPath: undefined,
+      method: 'PUT',
+      maxHeaderSize: undefined,
+      insecureHTTPParser: undefined,
+      path: '/api/restockOrder/55/skuItems',
+      _ended: true,
+      res: [IncomingMessage],
+      aborted: false,
+      timeoutCb: null,
+      upgradeOrConnect: false,
+      parser: null,
+      maxHeadersCount: null,
+      reusedSocket: false,
+      host: '127.0.0.1',
+      protocol: 'http:',
+      [Symbol(kCapture)]: false,
+      [Symbol(kNeedDrain)]: false,
+      [Symbol(corked)]: 0,
+      [Symbol(kOutHeaders)]: [Object: null prototype]
+    },
+    protocol: 'http:',
+    host: '127.0.0.1:61399',
+    _endCalled: true,
+    _callback: [Function (anonymous)],
+    _fullfilledPromise: Promise { [Circular *2] },
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [ClientRequest],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    response: [Circular *2],
+    called: true,
+    [Symbol(kCapture)]: false
+  },
+  req: <ref *3> ClientRequest {
+    _events: [Object: null prototype] {
+      drain: [Function],
+      error: [Function],
+      prefinish: [Function: requestOnPrefinish]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    outputData: [],
+    outputSize: 0,
+    writable: true,
+    destroyed: false,
+    _last: true,
+    chunkedEncoding: false,
+    shouldKeepAlive: false,
+    maxRequestsOnConnectionReached: false,
+    _defaultKeepAlive: true,
+    useChunkedEncodingByDefault: true,
+    sendDate: false,
+    _removedConnection: false,
+    _removedContLen: false,
+    _removedTE: false,
+    _contentLength: 146,
+    _hasBody: true,
+    _trailer: '',
+    finished: true,
+    _headerSent: true,
+    _closed: false,
+    socket: Socket {
+      connecting: false,
+      _hadError: false,
+      _parent: null,
+      _host: null,
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 7,
+      _maxListeners: undefined,
+      _writableState: [WritableState],
+      allowHalfOpen: false,
+      _sockname: null,
+      _pendingData: null,
+      _pendingEncoding: '',
+      server: null,
+      _server: null,
+      parser: null,
+      _httpMessage: [Circular *3],
+      [Symbol(async_id_symbol)]: 11382,
+      [Symbol(kHandle)]: [TCP],
+      [Symbol(kSetNoDelay)]: true,
+      [Symbol(lastWriteQueueSize)]: 0,
+      [Symbol(timeout)]: null,
+      [Symbol(kBuffer)]: null,
+      [Symbol(kBufferCb)]: null,
+      [Symbol(kBufferGen)]: null,
+      [Symbol(kCapture)]: false,
+      [Symbol(kBytesRead)]: 0,
+      [Symbol(kBytesWritten)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    _header: 'PUT /api/restockOrder/55/skuItems HTTP/1.1\r\n' +
+      'Host: 127.0.0.1:61399\r\n' +
+      'Accept-Encoding: gzip, deflate\r\n' +
+      'User-Agent: node-superagent/3.8.3\r\n' +
+      'Content-Type: application/json\r\n' +
+      'Content-Length: 146\r\n' +
+      'Connection: close\r\n' +
+      '\r\n',
+    _keepAliveTimeout: 0,
+    _onPendingData: [Function: nop],
+    agent: Agent {
+      _events: [Object: null prototype],
+      _eventsCount: 2,
+      _maxListeners: undefined,
+      defaultPort: 80,
+      protocol: 'http:',
+      options: [Object: null prototype],
+      requests: [Object: null prototype] {},
+      sockets: [Object: null prototype],
+      freeSockets: [Object: null prototype] {},
+      keepAliveMsecs: 1000,
+      keepAlive: false,
+      maxSockets: Infinity,
+      maxFreeSockets: 256,
+      scheduling: 'lifo',
+      maxTotalSockets: Infinity,
+      totalSocketCount: 1,
+      [Symbol(kCapture)]: false
+    },
+    socketPath: undefined,
+    method: 'PUT',
+    maxHeaderSize: undefined,
+    insecureHTTPParser: undefined,
+    path: '/api/restockOrder/55/skuItems',
+    _ended: true,
+    res: <ref *1> IncomingMessage {
+      _readableState: [ReadableState],
+      _events: [Object: null prototype],
+      _eventsCount: 4,
+      _maxListeners: undefined,
+      socket: [Socket],
+      httpVersionMajor: 1,
+      httpVersionMinor: 1,
+      httpVersion: '1.1',
+      complete: true,
+      rawHeaders: [Array],
+      rawTrailers: [],
+      aborted: false,
+      upgrade: false,
+      url: '',
+      method: null,
+      statusCode: 422,
+      statusMessage: 'Unprocessable Entity',
+      client: [Socket],
+      _consuming: false,
+      _dumped: false,
+      req: [Circular *3],
+      text: '',
+      [Symbol(kCapture)]: false,
+      [Symbol(kHeaders)]: [Object],
+      [Symbol(kHeadersCount)]: 10,
+      [Symbol(kTrailers)]: null,
+      [Symbol(kTrailersCount)]: 0,
+      [Symbol(RequestTimeout)]: undefined
+    },
+    aborted: false,
+    timeoutCb: null,
+    upgradeOrConnect: false,
+    parser: null,
+    maxHeadersCount: null,
+    reusedSocket: false,
+    host: '127.0.0.1',
+    protocol: 'http:',
+    [Symbol(kCapture)]: false,
+    [Symbol(kNeedDrain)]: false,
+    [Symbol(corked)]: 0,
+    [Symbol(kOutHeaders)]: [Object: null prototype] {
+      host: [Array],
+      'accept-encoding': [Array],
+      'user-agent': [Array],
+      'content-type': [Array],
+      'content-length': [Array]
+    }
+  },
+  text: '',
+  body: '',
+  files: undefined,
+  buffered: true,
+  headers: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  header: {
+    'x-powered-by': 'Express',
+    'content-type': 'application/json; charset=utf-8',
+    date: 'Thu, 07 Jul 2022 15:15:54 GMT',
+    connection: 'close',
+    'content-length': '0'
+  },
+  statusCode: 422,
+  status: 422,
+  statusType: 4,
+  info: false,
+  ok: false,
+  redirect: false,
+  clientError: true,
+  serverError: false,
+  error: Error: cannot PUT /api/restockOrder/55/skuItems (422)
+      at Response.toError (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:94:15)
+      at ResponseBase._setStatusProperties (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\response-base.js:123:16)
+      at new Response (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\response.js:41:8)
+      at Test.Request._emitResponse (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:752:20)
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\index.js:916:38
+      at IncomingMessage.<anonymous> (C:\Users\Moyne\Desktop\polito\EzWh\code\server\node_modules\superagent\lib\node\parsers\json.js:19:7)
+      at IncomingMessage.emit (node:events:532:35)
+      at endReadableNT (node:internal/streams/readable:1346:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21) {
+    status: 422,
+    text: '',
+    method: 'PUT',
+    path: '/api/restockOrder/55/skuItems'
+  },
+  created: false,
+  accepted: false,
+  noContent: false,
+  badRequest: false,
+  unauthorized: false,
+  notAcceptable: false,
+  forbidden: false,
+  notFound: false,
+  unprocessableEntity: true,
+  type: 'application/json',
+  charset: 'utf-8',
+  links: {},
+  setEncoding: [Function: bound ],
+  redirects: [],
+  [Symbol(kCapture)]: false
+}
+        4) Change a state of a restock order
+       get /api/restockOrders
+        ✔  get all restock orders
+       get /api/restockOrderIssued
+        ✔  get all restock order issued
+       post /api/returnOrder
+[
+  {
+    SKUId: 83,
+    itemId: 1,
+    description: 'descr0',
+    price: 8.99,
+    qty: undefined
+  },
+  {
+    SKUId: 84,
+    itemId: 2,
+    description: 'descr1',
+    price: 6.99,
+    qty: undefined
+  }
+]
+TRYING TO GET SKUIT  12345678901234567890123456789017
+SKU IT  12345678901234567890123456789017  , DOESN'T EXISTS
+
+{
+  returnDate: '2022/05/16 23:33',
+  products: [
+    {
+      SKUId: 83,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      RFID: '12345678901234567890123456789017'
+    },
+    {
+      SKUId: 84,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      RFID: '12345678901234567890123456789018'
+    }
+  ],
+  restockOrderId: 56
+}
+        ✔  Create a return order
+       post /api/returnOrder
+[
+  {
+    SKUId: 83,
+    itemId: 1,
+    description: 'descr0',
+    price: 8.99,
+    qty: undefined
+  },
+  {
+    SKUId: 84,
+    itemId: 2,
+    description: 'descr1',
+    price: 6.99,
+    qty: undefined
+  }
+]
+
+{
+  returnDate: '2022/05/16 23:33',
+  products: [
+    {
+      SKUId: 83,
+      itemId: 1,
+      description: 'descr0',
+      price: 8.99,
+      RFID: '12345678901234567890123456789017'
+    },
+    {
+      SKUId: 84,
+      itemId: 2,
+      description: 'descr1',
+      price: 6.99,
+      RFID: '12345678901234567890123456789018'
+    }
+  ],
+  restockOrderId: 100000
+}
+        ✔  Create a return order
+       post /api/returnOrder
+        ✔  Create a return order
+       get /api/returnOrders
+        ✔  get all return orders
+       get /api/returnOrders/:id
+        ✔  get return order by id
+
+
+  186 passing (2s)
+  4 failing
+
+  1) Test CR1 RestockOrder
+       put /api/restockOrder/:id/skuItems
+         Change a state of a restock order:
+
+      AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 422
+      + expected - actual
+
+      -422
+      +200
+      
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\acceptanceTest\utils-new-restockorder.js:206:38
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  2) Test CR1 ReturnOrder
+       put /api/restockOrder/:id/skuItems
+         Change a state of a restock order:
+
+      AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 422
+      + expected - actual
+
+      -422
+      +200
+      
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\acceptanceTest\utils-new-restockorder.js:206:38
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  3) Testing Change1 requirements
+       Test CR1 RestockOrder
+         put /api/restockOrder/:id/skuItems
+           Change a state of a restock order:
+
+      AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 422
+      + expected - actual
+
+      -422
+      +200
+      
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\acceptanceTest\utils-new-restockorder.js:206:38
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+  4) Testing Change1 requirements
+       Test CR1 ReturnOrder
+         put /api/restockOrder/:id/skuItems
+           Change a state of a restock order:
+
+      AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 422
+      + expected - actual
+
+      -422
+      +200
+      
+      at C:\Users\Moyne\Desktop\polito\EzWh\code\server\acceptanceTest\utils-new-restockorder.js:206:38
+      at runMicrotasks (<anonymous>)
+      at processTicksAndRejections (node:internal/process/task_queues:96:5)
+
+
+
+[mochawesome] Report JSON saved to C:\Users\Moyne\Desktop\polito\EzWh\code\server\mochawesome-report\mochawesome.json
+
+[mochawesome] Report HTML saved to C:\Users\Moyne\Desktop\polito\EzWh\code\server\mochawesome-report\mochawesome.html
+

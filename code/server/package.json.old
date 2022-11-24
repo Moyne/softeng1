@@ -1,0 +1,33 @@
+{
+  "dependencies": {
+    "argon2": "^0.28.5",
+    "dayjs": "^1.11.2",
+    "express": "^4.17.3",
+    "sinon-chai": "^3.7.0",
+    "sqlite3": "^5.0.6"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "jest": "^27.5.1",
+    "mocha": "^9.2.2"
+  },
+  "scripts": {
+    "apiTest": "mocha test --exit",
+    "test": "jest --runInBand",
+    "start": "node server.js"
+  },
+  "name": "server",
+  "description": "- Open a terminal\r - Open the code/server folder\r - Input ```npm install```\r - Input ```node server.js```\r - This message will be shown: Server listening at 
+http://localhost:3001\r - Do not close the terminal window, otherwise the server will be shut down",
+  "version": "1.0.0",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
